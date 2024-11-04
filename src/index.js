@@ -7,8 +7,8 @@ let hub_host = 'registry-1.docker.io';
 // Docker认证服务器地址
 const auth_url = 'https://auth.docker.io';
 // 自定义的工作服务器地址
-let workers_url = 'https://docker.1panel.dev';
-const workers_host = 'docker.1panel.dev'
+let workers_url = 'https://docker.brooke.fun';
+const workers_host = 'docker.brooke.fun'
 // const home_page_url = 'https://cf.qq.ms/dockerhubproxy.html'
 
 let ua_black_list = ['netcraft'];

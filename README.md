@@ -10,7 +10,7 @@
 ### ![Gitee Repo stars](https://gitee.com/svip520/docker-hub-npm/badge/star.svg) Gitee：[https://gitee.com/svip520/docker-hub-npm](https://gitee.com/svip520/docker-hub-npm)
 
 ## 演示网站
-### [https://docker.1panel.dev](https://docker.1panel.dev)
+### [https://docker.brooke.fun](https://docker.brooke.fun)
 
 ## 部署教程
 #### 1、下载定义的依赖包：
@@ -33,7 +33,7 @@ docker pull library/alpine:latest
 ```
 #### 加速拉取镜像命令：
 ```
-docker pull docker.1panel.dev/library/alpine:latest
+docker pull docker.brooke.fun/library/alpine:latest
 ```
 
 ## 使用方法②
@@ -44,7 +44,7 @@ nano /etc/docker/daemon.json
 #### 修改JSON文件 更改为以下内容 然后保存
 ```
 {
-  "registry-mirrors": ["https://docker.1panel.dev"]
+  "registry-mirrors": ["https://docker.brooke.fun"]
 }
 ```
 重载systemd管理守护进程配置文件
@@ -61,7 +61,7 @@ sudo systemctl restart docker
 ```
 sudo tee /etc/docker/daemon.json <<EOF
 {
-    "registry-mirrors": ["https://docker.1panel.dev"]
+    "registry-mirrors": ["https://docker.brooke.fun"]
 }
 EOF
 ```

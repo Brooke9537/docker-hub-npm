@@ -10,15 +10,15 @@ compatibility_flags = ["nodejs_compat"]
 # 路由配置: https://developers.cloudflare.com/workers/configuration/routing/routes/#set-up-a-route-in-wranglertoml
 workers_dev = true
 routes = [
-  { pattern = "hub.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "docker.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "quay.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "gcr.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "k8s-gcr.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "k8s.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "ghcr.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "cloudsmith.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "nvcr.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "hub.brooke.fun", zone_name = "brooke.fun", custom_domain = true },
+  { pattern = "docker.brooke.fun", zone_name = "brooke.fun", custom_domain = true },
+  { pattern = "quay.brooke.fun", zone_name = "brooke.fun", custom_domain = true },
+  { pattern = "gcr.brooke.fun", zone_name = "brooke.fun", custom_domain = true },
+  { pattern = "k8s-gcr.brooke.fun", zone_name = "brooke.fun", custom_domain = true },
+  { pattern = "k8s.brooke.fun", zone_name = "brooke.fun", custom_domain = true },
+  { pattern = "ghcr.brooke.fun", zone_name = "brooke.fun", custom_domain = true },
+  { pattern = "cloudsmith.brooke.fun", zone_name = "brooke.fun", custom_domain = true },
+  { pattern = "nvcr.brooke.fun", zone_name = "brooke.fun", custom_domain = true },
 ]
 
 # Workers 日志
