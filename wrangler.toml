@@ -10,6 +10,8 @@ compatibility_flags = ["nodejs_compat"]
 # 路由配置: https://developers.cloudflare.com/workers/configuration/routing/routes/#set-up-a-route-in-wranglertoml
 workers_dev = true
 routes = [
+  { pattern = "www.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "1panel.dev/*", zone_name = "1panel.dev" },
   { pattern = "hub.1panel.dev/*", zone_name = "1panel.dev" },
   { pattern = "docker.1panel.dev/*", zone_name = "1panel.dev" },
   { pattern = "quay.1panel.dev/*", zone_name = "1panel.dev" },
