@@ -8,6 +8,7 @@
   <meta name="description" content="Docker镜像加速站是一种通过配置国内或国际的镜像加速器，来提高从Docker Hub等官方仓库拉取镜像的速度和稳定性的服务。">
   <meta property="og:title" content="Docker镜像加速站" />
   <meta property="og:description" content="Docker镜像加速站是一种通过配置国内或国际的镜像加速器，来提高从Docker Hub等官方仓库拉取镜像的速度和稳定性的服务。" />
+  <meta name="google-adsense-account" content="ca-pub-8378953587135259">
   <title>Docker镜像加速站</title>
   <style>
     body {
@@ -273,6 +274,12 @@ EOF</code><button class="copy-button" onclick="copyCode(this)">复制代码</but
   <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <!-- 弹窗js -->
   <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- google 验证 -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8378953587135259"
+     crossorigin="anonymous"></script>
+  <!-- google ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8378953587135259"
+    crossorigin="anonymous"></script>
   <script>
 
     window.onload = function () {
@@ -282,7 +289,7 @@ EOF</code><button class="copy-button" onclick="copyCode(this)">复制代码</but
       // clearInterval(intervalIdTime);
       updateCloudflareInfo();
       // 公告
-      swal("温馨提示", "由于cloudflare worker每日请求次数有限，目前本网站已经屏蔽部分监控本站请求（不会拉黑IP，也不影响docker镜像的拉取），对于此类请求，HTTP状态码将返回403，部分监控工具检测到网站返回403可视为网站处于正常运营状态\r\n\r\n已屏蔽监控工具：Uptime Kuma");
+      swal("温馨提示", "由于cloudflare worker每日请求次数有限，目前本网站已经屏蔽部分监控本站请求（不会拉黑IP，也不影响docker镜像的拉取），对于此类请求，HTTP状态码将返回403，部分监控工具检测到网站返回403可视为网站处于正常运营状态\r\n\r\n已屏蔽(监控)工具：Uptime Kuma、Watchtower");
     };
 
     // docker hub 搜索
