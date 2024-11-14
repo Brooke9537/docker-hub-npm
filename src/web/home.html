@@ -289,7 +289,7 @@ EOF</code><button class="copy-button" onclick="copyCode(this)">复制代码</but
       // clearInterval(intervalIdTime);
       updateCloudflareInfo();
       // 公告
-      swal("温馨提示", "由于cloudflare worker每日请求次数有限，目前本网站已经屏蔽部分监控本站请求（不会拉黑IP，也不影响docker镜像的拉取），对于此类请求，HTTP状态码将返回403，部分监控工具检测到网站返回403可视为网站处于正常运营状态\r\n\r\n已屏蔽(监控)工具：Uptime Kuma、Watchtower");
+      swal("温馨提示", "由于cloudflare worker每日请求次数有限，目前本网站已经屏蔽部分频繁请求（不会拉黑IP，也不影响docker镜像的拉取），对于此类请求，HTTP状态码将返回403，部分监控工具检测到网站返回403可视为网站处于正常运营状态\r\n\r\n已屏蔽工具：Uptime Kuma、Watchtower");
     };
 
     // docker hub 搜索
