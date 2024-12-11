@@ -9,7 +9,7 @@
 ### ![GitHub Repo stars](https://img.shields.io/github/stars/520svip/docker-hub-npm.svg) GitHub：[https://github.com/520svip/docker-hub-npm](https://github.com/520svip/docker-hub-npm)
 ### ![Gitee Repo stars](https://gitee.com/svip520/docker-hub-npm/badge/star.svg) Gitee：[https://gitee.com/svip520/docker-hub-npm](https://gitee.com/svip520/docker-hub-npm)
 
-## 演示网站
+## 演示网站（中国境内被墙访问）
 ### [https://docker.1panel.dev](https://docker.1panel.dev)
 
 ## 部署教程
@@ -17,11 +17,26 @@
 ```
 npm install
 ```
-#### 2、预览和测试应用程序：
+#### 2、修改配置文件 wrangler.toml ：
+##### 调整routers部分为自己CloudFlare的域名（建议留空，后续去CF控制台手动配置）
+```
+routes = [
+  { pattern = "hub.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "docker.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "quay.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "gcr.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "k8s-gcr.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "k8s.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "ghcr.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "cloudsmith.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "nvcr.1panel.dev/*", zone_name = "1panel.dev" },
+]
+```
+#### 3、预览和测试应用程序：
 ```
 npx wrangler dev
 ```
-#### 3、部署应用程序置Cloudflare Workers：
+#### 4、部署应用程序置Cloudflare Workers：
 ```
 npx wrangler deploy
 ```
