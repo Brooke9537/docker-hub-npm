@@ -10,15 +10,15 @@ compatibility_flags = ["nodejs_compat"]
 # 路由配置: https://developers.cloudflare.com/workers/configuration/routing/routes/#set-up-a-route-in-wranglertoml
 workers_dev = true
 routes = [
-  { pattern = "hub.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "docker.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "quay.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "gcr.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "k8s-gcr.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "k8s.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "ghcr.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "cloudsmith.1panel.dev/*", zone_name = "1panel.dev" },
-  { pattern = "nvcr.1panel.dev/*", zone_name = "1panel.dev" },
+  # { pattern = "hub.1panel.dev/*", zone_name = "1panel.dev" },
+  # { pattern = "docker.1panel.dev/*", zone_name = "1panel.dev" },
+  # { pattern = "quay.1panel.dev/*", zone_name = "1panel.dev" },
+  # { pattern = "gcr.1panel.dev/*", zone_name = "1panel.dev" },
+  # { pattern = "k8s-gcr.1panel.dev/*", zone_name = "1panel.dev" },
+  # { pattern = "k8s.1panel.dev/*", zone_name = "1panel.dev" },
+  # { pattern = "ghcr.1panel.dev/*", zone_name = "1panel.dev" },
+  # { pattern = "cloudsmith.1panel.dev/*", zone_name = "1panel.dev" },
+  # { pattern = "nvcr.1panel.dev/*", zone_name = "1panel.dev" },
 ]
 
 # Workers 日志
