@@ -9,20 +9,27 @@
 ### ![GitHub Repo stars](https://img.shields.io/github/stars/520svip/docker-hub-npm.svg) GitHub：[https://github.com/520svip/docker-hub-npm](https://github.com/520svip/docker-hub-npm)
 ### ![Gitee Repo stars](https://gitee.com/svip520/docker-hub-npm/badge/star.svg) Gitee：[https://gitee.com/svip520/docker-hub-npm](https://gitee.com/svip520/docker-hub-npm)
 
-## 演示网站（中国境内被墙访问）
-### [https://docker.1panel.dev](https://docker.1panel.dev)
+## 演示网站
+### [https://hub.1panel.dev](https://hub.1panel.dev)（正常访问）
+### [https://docker.1panel.dev](https://docker.1panel.dev)（中国境内被墙访问）
 
 ## 部署教程
 #### 1、下载定义的依赖包：
 ```
 npm install
 ```
-#### 2、修改配置文件 wrangler.toml ：
+#### 2、修改配置文件 src/index.js ：
+##### 调整workers_url、workers_host为自己CloudFlare的域名
+```
+let workers_url = 'https://docker.1panel.dev';
+const workers_host = 'docker.1panel.dev'
+```
+#### 3、修改配置文件 wrangler.toml ：
 ##### 调整routers部分为自己CloudFlare的域名（建议留空，后续去CF控制台手动配置）
 ```
 routes = [
-  { pattern = "hub.1panel.dev/*", zone_name = "1panel.dev" },
   { pattern = "docker.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "hub.1panel.dev/*", zone_name = "1panel.dev" },
   { pattern = "quay.1panel.dev/*", zone_name = "1panel.dev" },
   { pattern = "gcr.1panel.dev/*", zone_name = "1panel.dev" },
   { pattern = "k8s-gcr.1panel.dev/*", zone_name = "1panel.dev" },
@@ -32,11 +39,11 @@ routes = [
   { pattern = "nvcr.1panel.dev/*", zone_name = "1panel.dev" },
 ]
 ```
-#### 3、预览和测试应用程序：
+#### 4、预览和测试应用程序：
 ```
 npx wrangler dev
 ```
-#### 4、部署应用程序置Cloudflare Workers：
+#### 5、部署应用程序置Cloudflare Workers：
 ```
 npx wrangler deploy
 ```
@@ -48,7 +55,7 @@ docker pull library/alpine:latest
 ```
 #### 加速拉取镜像命令：
 ```
-docker pull docker.1panel.dev/library/alpine:latest
+docker pull hub.1panel.dev/library/alpine:latest
 ```
 
 ## 使用方法②
@@ -59,7 +66,7 @@ nano /etc/docker/daemon.json
 #### 修改JSON文件 更改为以下内容 然后保存
 ```
 {
-  "registry-mirrors": ["https://docker.1panel.dev"]
+  "registry-mirrors": ["https://hub.1panel.dev"]
 }
 ```
 重载systemd管理守护进程配置文件
@@ -76,7 +83,7 @@ sudo systemctl restart docker
 ```
 sudo tee /etc/docker/daemon.json <<EOF
 {
-    "registry-mirrors": ["https://docker.1panel.dev"]
+    "registry-mirrors": ["https://hub.1panel.dev"]
 }
 EOF
 ```
