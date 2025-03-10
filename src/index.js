@@ -135,6 +135,7 @@ export default {
 			pathname == '/',
 			pathname == '/favicon.ico',
 			pathname == '/auth/profile',
+			pathname == '/ads.txt',
 		];
 
 		if (conditions.some(condition => condition) && (fakePage === true || hostTop == 'docker')) {
@@ -168,6 +169,13 @@ export default {
 						'Content-Type': 'text/html; charset=UTF-8',
 					},
 				});
+			} else if (url.pathname == '/ads.txt') {
+				return new Response('google.com, pub-8378953587135259, DIRECT, f08c47fec0942fa0', {
+					headers: {
+						'Content-Type': 'text/html; charset=UTF-8',
+					},
+				});
+
 			}
 
 			const newUrl = new URL("https://registry.hub.docker.com" + pathname + url.search);

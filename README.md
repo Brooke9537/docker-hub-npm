@@ -12,16 +12,38 @@
 ## 演示网站
 ### [https://docker.brooke.fun](https://docker.brooke.fun)
 
+
 ## 部署教程
 #### 1、下载定义的依赖包：
 ```
 npm install
 ```
-#### 2、预览和测试应用程序：
+#### 2、修改配置文件 src/index.js ：
+##### 调整workers_url、workers_host为自己CloudFlare的域名
+```
+let workers_url = 'https://docker.1panel.dev';
+const workers_host = 'docker.1panel.dev'
+```
+#### 3、修改配置文件 wrangler.toml ：
+##### 调整routers部分为自己CloudFlare的域名（建议留空，后续去CF控制台手动配置）
+```
+routes = [
+  { pattern = "docker.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "hub.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "quay.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "gcr.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "k8s-gcr.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "k8s.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "ghcr.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "cloudsmith.1panel.dev/*", zone_name = "1panel.dev" },
+  { pattern = "nvcr.1panel.dev/*", zone_name = "1panel.dev" },
+]
+```
+#### 4、预览和测试应用程序：
 ```
 npx wrangler dev
 ```
-#### 3、部署应用程序置Cloudflare Workers：
+#### 5、部署应用程序置Cloudflare Workers：
 ```
 npx wrangler deploy
 ```
