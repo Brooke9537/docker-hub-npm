@@ -213,7 +213,15 @@ export default {
 					'Accept-Language': getReqHeader("Accept-Language"),
 					'Accept-Encoding': getReqHeader("Accept-Encoding"),
 					'Connection': 'keep-alive',
-					'Cache-Control': 'max-age=0'
+					'Cache-Control': 'max-age=0',
+					'x-amz-content-sha256': getReqHeader("x-amz-content-sha256"),
+					'x-amz-date': getReqHeader("x-amz-date"),
+					'x-amz-security-token': getReqHeader("x-amz-security-token"),
+					'x-amz-algorithm': getReqHeader("x-amz-algorithm"),
+					'x-amz-credential': getReqHeader("x-amz-credential"),
+					'x-amz-signature': getReqHeader("x-amz-signature"),
+					'x-amz-expires': getReqHeader("x-amz-expires"),
+					'x-amz-security-token': getReqHeader("x-amz-security-token"),
 				}
 			};
 			let token_url = auth_url + url.pathname + url.search;
@@ -239,7 +247,15 @@ export default {
 				'Accept-Language': getReqHeader("Accept-Language"),
 				'Accept-Encoding': getReqHeader("Accept-Encoding"),
 				'Connection': 'keep-alive',
-				'Cache-Control': 'max-age=0'
+				'Cache-Control': 'max-age=0',
+				'x-amz-content-sha256': getReqHeader("x-amz-content-sha256"),
+				'x-amz-date': getReqHeader("x-amz-date"),
+				'x-amz-security-token': getReqHeader("x-amz-security-token"),
+				'x-amz-algorithm': getReqHeader("x-amz-algorithm"),
+				'x-amz-credential': getReqHeader("x-amz-credential"),
+				'x-amz-signature': getReqHeader("x-amz-signature"),
+				'x-amz-expires': getReqHeader("x-amz-expires"),
+				'x-amz-security-token': getReqHeader("x-amz-security-token"),
 			},
 			cacheTtl: 3600 // 缓存时间
 		};
